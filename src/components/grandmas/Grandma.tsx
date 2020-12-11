@@ -36,6 +36,20 @@ const GrandmaName = styled.div`
     color: #622c6e;
 `
 
+const GrandmaDeleteButton = styled.button`
+    font-size: 15px;
+
+    position: absolute;
+    top: 5px;
+    left: 5px;
+
+    cursor: pointer;
+
+    border: none;
+    outline: none;
+    background: none;
+`
+
 
 interface Props {
     grandma: GrandmaStore
@@ -50,6 +64,7 @@ export const Grandma: React.FC<Props> = observer(({ grandma }) => {
         >
             <GrandmaContainer overlayed={grandma.globalStore.overlayedGrandma === grandma} onClick={grandma.setIsOverlayed} >
                 <DragInitiator onMouseDown={grandma.setIsOverlayed} />
+                <GrandmaDeleteButton onClick={grandma.delete}>✖</GrandmaDeleteButton>
 
                 <GrandmaSVG
                     key={grandma.id}
