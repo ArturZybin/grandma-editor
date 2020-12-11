@@ -14,6 +14,8 @@ export class GlobalStore {
             nextGrandmaId: false
         })
 
+        this.restoreGrandmas()
+
         reaction(
             () => this.grandmas.size,
             () => this.storeGrandmas()

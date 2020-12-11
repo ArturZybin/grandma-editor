@@ -61,7 +61,7 @@ export class GrandmaStore {
             age: this.age,
             hairColor: this.hairColor,
             eyesColor: this.eyesColor,
-            jacketColor: this.hairColor
+            jacketColor: this.jacketColor
         }
     }
 
