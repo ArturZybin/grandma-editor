@@ -1,24 +1,12 @@
 div {
-    font-size: 18px;
-    line-height: 20px;
-
-    box-sizing: border-box;
-    width: 100%;
+    width: 200px;
+    padding: 10px;
 
     text-align: center;
 
-    color: #622c6e;
-    border: none;
-    border-bottom: 1px solid #622c6e;
-    outline: none;
-    background-color: transparent;
-
-    moz-appearance: textfield;
-
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-        margin: 0;
-
-        -webkit-appearance: none;
-    }
+    border: 1px solid black;
+    border: 2px solid #f7db94;
+    border-radius: 10px;
+    background-color: #fdf5e0;
+    box-shadow: 1px 4px 10px #f5d177;
 }

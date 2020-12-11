@@ -1,13 +1,37 @@
-import { observer } from 'mobx-react-lite'
 import * as React from 'react'
+import { observer } from 'mobx-react-lite'
 import Draggable from 'react-draggable'
 import styled from 'styled-components'
+
 import { GrandmaStore } from '../../store/GrandmaStore'
+import { GrandmaSVG } from '../grandmaSVG'
 import { DragInitiator } from '../DragInitiator'
-import { GrandmaSVG } from '../grandmaSVG/GrandmaSVG'
+import { Button } from '../Button'
 
 const GrandmaContainer = styled.div`
+    position: absolute;
+
     width: 200px;
+    padding: 10px;
+
+    text-align: center;
+
+    border: 1px solid black;
+    border: 2px solid #f7db94;
+    border-radius: 10px;
+    background-color: #fdf5e0;
+    box-shadow: 1px 4px 10px #f5d177;
+`
+
+const GrandmaName = styled.div`
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+    margin: 10px 0;
+
+    text-align: center;
+
+    color: #622c6e;
 `
 
 
@@ -24,6 +48,7 @@ export const Grandma: React.FC<Props> = observer(({ grandma }) => {
         >
             <GrandmaContainer>
                 <DragInitiator />
+
                 <GrandmaSVG
                     key={grandma.id}
                     type={grandma.type}
@@ -31,6 +56,10 @@ export const Grandma: React.FC<Props> = observer(({ grandma }) => {
                     eyesColor={grandma.eyesColor}
                     jacketColor={grandma.jacketColor}
                 />
+
+                <GrandmaName>{grandma.name}</GrandmaName>
+
+                <Button onClick={grandma.startEditing}>edit</Button>
             </GrandmaContainer>
         </Draggable>
     )

@@ -46,6 +46,10 @@ export class GrandmaStore {
         this.jacketColor = data.jacketColor
     }
 
+    startEditing = () => {
+        this.globalStore.form.show(this)
+    }
+
     delete = () => {
         this.globalStore.deleteGrandma(this)
     }

@@ -7,10 +7,12 @@ import styled from 'styled-components'
 import { globalStoreContext } from '../store/GlobalStore'
 import { DragInitiator } from './DragInitiator'
 import { Button } from './Button'
-import { GrandmaSVG } from './grandmaSVG/GrandmaSVG'
+import { GrandmaSVG } from './grandmaSVG'
 
 
 const FormContainer = styled.div`
+    position: absolute;
+
     width: 500px;
     padding: 20px;
 
