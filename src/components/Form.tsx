@@ -130,6 +130,7 @@ export const Form: React.FC = observer(() => {
         <Draggable
             axis="both"
             handle=".dragInitiator"
+            defaultPosition={{ x: 300, y: 100 }}
         >
             <FormContainer>
                 {form.error && <FormError>{form.error}</FormError>}
@@ -155,21 +156,21 @@ export const Form: React.FC = observer(() => {
                 <FormLabel>hair color</FormLabel>
                 <SliderPicker
                     color={form.hairColor}
-                    onChangeComplete={color => form.updateHairColor(color.hex)}
+                    onChange={color => form.updateJacketColor(color.hex)}
                 />
                 <FormDivider />
 
                 <FormLabel>eyes color</FormLabel>
                 <SliderPicker
                     color={form.eyesColor}
-                    onChangeComplete={color => form.updateEyesColor(color.hex)}
+                    onChange={color => form.updateJacketColor(color.hex)}
                 />
                 <FormDivider />
 
                 <FormLabel>jacket color</FormLabel>
                 <SliderPicker
                     color={form.jacketColor}
-                    onChangeComplete={color => form.updateJacketColor(color.hex)}
+                    onChange={color => form.updateJacketColor(color.hex)}
                 />
                 <FormDivider />
 
