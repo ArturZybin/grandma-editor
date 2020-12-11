@@ -13,7 +13,7 @@ export const OpenFormButton: React.FC = () => {
             axis="both"
             handle=".dragInitiator"
         >
-            <Button onClick={() => showForm()} style={{ position: 'absolute' }}>
+            <Button onClick={() => showForm()} style={{ position: 'absolute', zIndex: 3 }}>
                 <DragInitiator />
                 Create grandma
             </Button>

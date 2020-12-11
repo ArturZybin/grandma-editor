@@ -103,4 +103,10 @@ export class FormStore {
     hideError = () => {
         this.error = null
     }
+
+    checkIfDeletedGrandmaEdited = (deletedGrandma: GrandmaStore) => {
+        if (this.grandmaToEdit === deletedGrandma) {
+            this.hide()
+        }
+    }
 }

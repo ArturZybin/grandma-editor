@@ -23,7 +23,7 @@ const FormContainer = styled.div`
     background-color: #fdf5e0;
     box-shadow: 1px 4px 10px #f5d177;
 
-    z-index: 3;
+    z-index: 4;
 `
 
 const FormDivider = styled.div`

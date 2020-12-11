@@ -28,6 +28,7 @@ export class GlobalStore {
 
     deleteGrandma = (grandma: GrandmaStore) => {
         this.grandmas.delete(grandma)
+        this.form.checkIfDeletedGrandmaEdited(grandma)
     }
 
     storeGrandmas = () => {
