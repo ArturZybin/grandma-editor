@@ -58,6 +58,7 @@ export const Grandma: React.FC<Props> = observer(({ grandma }) => {
                 />
 
                 <GrandmaName>{grandma.name}</GrandmaName>
+                <GrandmaName>{grandma.age}</GrandmaName>
 
                 <Button onClick={grandma.startEditing}>edit</Button>
             </GrandmaContainer>

@@ -102,6 +102,20 @@ const FormCloseButton = styled.button`
     background: none;
 `
 
+const FormError = styled.div`
+    background-color: #b00020;
+    color: #fff;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+`
+
 
 export const Form: React.FC = observer(() => {
     const form = useContext(globalStoreContext).form
@@ -112,8 +126,10 @@ export const Form: React.FC = observer(() => {
             handle=".dragInitiator"
         >
             <FormContainer>
+                {form.error && <FormError>{form.error}</FormError>}
                 <DragInitiator />
                 <FormCloseButton onClick={form.hide}>✖</FormCloseButton>
+
 
                 <FormGrandmaPreview>
                     <FormArrowButton onClick={() => form.updateType(((form.type - 1 < 1) ? 4 : form.type - 1) as any)}>‹</FormArrowButton>

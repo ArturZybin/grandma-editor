@@ -23,6 +23,7 @@ export class FormStore {
     grandmaToEdit: GrandmaStore | null = null
 
     isOpen = false
+    error: null | string = null
 
     constructor(globalStore: GlobalStore) {
         makeAutoObservable(this, {
@@ -57,10 +58,16 @@ export class FormStore {
 
     hide = () => {
         this.isOpen = false
+        this.hideError()
         this.setFormData(defaultData)
     }
 
     save = () => {
+        if (!this.name) {
+            this.showError('Name is required!')
+            return
+        }
+
         const data: GrandmaData = {
             type: this.type,
             name: this.name,
@@ -86,5 +93,14 @@ export class FormStore {
         this.hairColor = data.hairColor
         this.eyesColor = data.eyesColor
         this.jacketColor = data.jacketColor
+    }
+
+    showError = (message: string) => {
+        this.error = message
+        setTimeout(this.hideError, 5000)
+    }
+
+    hideError = () => {
+        this.error = null
     }
 }
