@@ -13,7 +13,7 @@ export const GrandmaSVG3: React.FC<Props> = ({ hairColor, eyesColor, jacketColor
     const lightenJacketColor = lightenDarkenColor(jacketColor, 30)
 
     return (
-        <svg id="Capa_1" enableBackground="new 0 0 502 502" height="512" viewBox="0 0 502 502" width="512"
+        <svg id="Capa_1" enableBackground="new 0 0 502 502" viewBox="0 0 502 502"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >

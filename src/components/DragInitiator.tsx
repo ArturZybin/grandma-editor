@@ -31,7 +31,7 @@ const DragInitiatorImage = styled.img`
 
 
 export const DragInitiator: React.FC = () => (
-    <DragInitiatorContainer className="dragInitiator">
+    <DragInitiatorContainer className="dragInitiator" onClick={e => e.stopPropagation()}>
         <DragInitiatorImage src={dragImageSrc} />
     </DragInitiatorContainer>
 )

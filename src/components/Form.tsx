@@ -66,11 +66,40 @@ const FormInput = styled.input`
 `
 
 const FormGrandmaPreview = styled.div`
+    display: flex;
+
     height: 200px;
-    
+
+    justify-content: center;
+
     svg {
         height: 100%;
     }
+`
+
+const FormArrowButton = styled.button`
+    font-size: 40px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    border: none;
+    outline: none;
+    background: none;
+`
+
+const FormCloseButton = styled.button`
+    font-size: 20px;
+
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    cursor: pointer;
+
+    border: none;
+    outline: none;
+    background: none;
 `
 
 
@@ -84,9 +113,12 @@ export const Form: React.FC = observer(() => {
         >
             <FormContainer>
                 <DragInitiator />
+                <FormCloseButton onClick={form.hide}>✖</FormCloseButton>
 
                 <FormGrandmaPreview>
+                    <FormArrowButton onClick={() => form.updateType(((form.type - 1 < 1) ? 4 : form.type - 1) as any)}>‹</FormArrowButton>
                     <GrandmaSVG type={form.type} hairColor={form.hairColor} eyesColor={form.eyesColor} jacketColor={form.jacketColor} />
+                    <FormArrowButton onClick={() => form.updateType(((form.type + 1 > 4) ? 1 : form.type + 1) as any)}>›</FormArrowButton>
                 </FormGrandmaPreview>
                 <FormDivider />
 
