@@ -64,4 +64,8 @@ export class GrandmaStore {
             jacketColor: this.hairColor
         }
     }
+
+    setIsOverlayed = () => {
+        this.globalStore.setOverlayedGrandma(this)
+    }
 }

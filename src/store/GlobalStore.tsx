@@ -7,6 +7,7 @@ export class GlobalStore {
     form = new FormStore(this)
     grandmas = new Set<GrandmaStore>()
     nextGrandmaId = 0
+    overlayedGrandma: null | GrandmaStore = null
 
     constructor() {
         makeAutoObservable(this, {
@@ -38,6 +39,10 @@ export class GlobalStore {
             const storedGrandmas = JSON.parse(storedData) as GrandmaData[]
             storedGrandmas.forEach(data => this.createGrandma(data))
         }
+    }
+
+    setOverlayedGrandma = (grandma: GrandmaStore) => {
+        this.overlayedGrandma = grandma
     }
 }
 

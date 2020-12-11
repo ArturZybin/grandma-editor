@@ -22,6 +22,8 @@ const FormContainer = styled.div`
     border-radius: 10px;
     background-color: #fdf5e0;
     box-shadow: 1px 4px 10px #f5d177;
+
+    z-index: 3;
 `
 
 const FormDivider = styled.div`
@@ -103,17 +105,21 @@ const FormCloseButton = styled.button`
 `
 
 const FormError = styled.div`
-    background-color: #b00020;
-    color: #fff;
-    text-align: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    left: 0;
+
     padding: 10px;
+
+    text-align: center;
+
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #b00020;
 `
 
 

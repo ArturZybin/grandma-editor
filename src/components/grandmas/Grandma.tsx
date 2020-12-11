@@ -8,7 +8,7 @@ import { GrandmaSVG } from '../grandmaSVG'
 import { DragInitiator } from '../DragInitiator'
 import { Button } from '../Button'
 
-const GrandmaContainer = styled.div`
+const GrandmaContainer = styled.div<{overlayed: boolean}>`
     position: absolute;
 
     width: 200px;
@@ -21,6 +21,8 @@ const GrandmaContainer = styled.div`
     border-radius: 10px;
     background-color: #fdf5e0;
     box-shadow: 1px 4px 10px #f5d177;
+
+    z-index: ${props => props.overlayed ? '2' : '1'};
 `
 
 const GrandmaName = styled.div`
@@ -46,8 +48,8 @@ export const Grandma: React.FC<Props> = observer(({ grandma }) => {
             axis="both"
             handle=".dragInitiator"
         >
-            <GrandmaContainer>
-                <DragInitiator />
+            <GrandmaContainer overlayed={grandma.globalStore.overlayedGrandma === grandma} onClick={grandma.setIsOverlayed} >
+                <DragInitiator onMouseDown={grandma.setIsOverlayed} />
 
                 <GrandmaSVG
                     key={grandma.id}

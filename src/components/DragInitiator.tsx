@@ -30,8 +30,13 @@ const DragInitiatorImage = styled.img`
 `
 
 
-export const DragInitiator: React.FC = () => (
-    <DragInitiatorContainer className="dragInitiator" onClick={e => e.stopPropagation()}>
+interface Props {
+    onMouseDown?: () => void
+}
+
+
+export const DragInitiator: React.FC<Props> = ({ onMouseDown }) => (
+    <DragInitiatorContainer className="dragInitiator" onClick={e => e.stopPropagation()} onMouseDown={onMouseDown}>
         <DragInitiatorImage src={dragImageSrc} />
     </DragInitiatorContainer>
 )
