@@ -12,6 +12,7 @@ export const OpenFormButton: React.FC = () => {
         <Draggable
             axis="both"
             handle=".dragInitiator"
+            defaultPosition={{ x: 100, y: 100 }}
         >
             <Button onClick={() => showForm()} style={{ position: 'absolute', zIndex: 3 }}>
                 <DragInitiator />
