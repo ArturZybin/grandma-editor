@@ -156,14 +156,14 @@ export const Form: React.FC = observer(() => {
                 <FormLabel>hair color</FormLabel>
                 <SliderPicker
                     color={form.hairColor}
-                    onChange={color => form.updateJacketColor(color.hex)}
+                    onChange={color => form.updateHairColor(color.hex)}
                 />
                 <FormDivider />
 
                 <FormLabel>eyes color</FormLabel>
                 <SliderPicker
                     color={form.eyesColor}
-                    onChange={color => form.updateJacketColor(color.hex)}
+                    onChange={color => form.updateEyesColor(color.hex)}
                 />
                 <FormDivider />
 
